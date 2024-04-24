@@ -378,7 +378,7 @@ class SaveAudio:
             results.append(result)
             count += 1
 
-        return {"ui": {"clips": results,"text": "Audio file："+path},"result": (path, )}
+        return {"ui": {"clips": results,"text": "Audio file："+stem_name},"result": (stem_name, )}
 
 
 class PreviewAudio(SaveAudio):
