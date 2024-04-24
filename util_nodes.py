@@ -334,10 +334,12 @@ class SaveAudio:
             },
         }
 
-    RETURN_TYPES = ()
+    RETURN_TYPES = ("STRING",)
     FUNCTION = "save_audio"
     OUTPUT_NODE = True
     CATEGORY = "audio"
+    RETURN_NAMES = ("Audio file path: String",)    
+    
 
     def save_audio(
         self,
@@ -376,7 +378,7 @@ class SaveAudio:
             results.append(result)
             count += 1
 
-        return {"ui": {"clips": results}}
+        return {"ui": {"clips": results,"text": "Audio file："+path},"result": (path, )}
 
 
 class PreviewAudio(SaveAudio):
